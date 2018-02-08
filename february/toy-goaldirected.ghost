@@ -11,7 +11,7 @@ s: (^person_appears(*)) ^increase_urge(introduction, 1.0)
 
 # If a person is happy tell a joke
 s: (^person_happy()) ^increase_urge(tell_joke, 0.1)
-s: (tell * joke) ^create_urge(tell_joke, 1.0)
+s: (tell * joke) ^increase_urge(tell_joke, 1.0)
 
 # If a person is happy tell a joke
 s: (^person_angry()) ^increase_urge(goodbye, 0.3)
