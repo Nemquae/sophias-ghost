@@ -9,6 +9,15 @@ concept: ~bad (...)
 # If any new user appears (perception), start introducing ourselves
 s: (^person_appears(*)) ^increase_urge(introduction, 1.0)
 
+
+
+
+#  If there is a positive mood(perception) & A(to the nth) & (T+T) → H(L_AI) (∴) [ VM & +W(to the 1.0th) ]
+s: (^person_appears(*)) ^increase_urge[(L_AI)[((introduction)(ask if person Content,))(1.0)]
+
+
+
+
 # If a person is happy tell a joke
 s: (^person_happy()) ^increase_urge(tell_joke, 0.1)
 s: (tell * joke) ^increase_urge(tell_joke, 1.0)
