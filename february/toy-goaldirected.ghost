@@ -12,7 +12,7 @@ s: (^person_appears(*)) ^increase_urge(introduction, 1.0)
 
 
 
-#  If there is a positive mood(perception) & A(to the nth) & (T+T) → H(L_AI) (∴) [ VM & +W(to the 1.0th) ]
+#  If there is a positive mood(perception) & A(to the nth) & (T+T) → H(L_AI) (∴) [ VM & ((+W)(to the 1.0th)) ]
 s: (^person_appears(*)) ^increase_urge[(L_AI)[((introduction)(ask if person Content,))(1.0)]
 
 
