@@ -1,0 +1,31 @@
+# ################################################################################
+# toy-ecan-big.ghost
+#
+# This rulebase is to test ECAN rule selection based on STI diffusion.
+# Not really meant to be running, but more used for debug information
+#
+# Predicates needed:
+#  - ^keep()
+# ################################################################################
+
+concept: ~animal (animal beast bird blackbird bobcat bullfrog cattle chimp
+  chimpanzee chordate cougar dinosaur dolphin echinoderm eukaryote
+  fish goose ichthyology koala ladybird mammal marsupial ornithology
+  panda primate prokaryote sloth sponge toad unicellular woodchuck pet)
+
+concept: ~planets (Mercury mercury Venus moon Mars mars Jupiter Saturn
+  Uranus Neptune Pluto)
+
+concept: ~hanson_team (Amy Audrey Amanda Ben Bill Cassio "David Chen"
+"David DeMaris" David Davide Denis Doug Doris Desmond Elaine
+Eddie Gerardo Jean Josh Joseph Kathleen Kino Linas "Man Hin" Mandeep
+Mark Misgana Natnael Ralf Ralph "Rui Ting" "Ray Ting" Sanny Stephan
+Veetas Wenwei)
+
+s: (is ~hanson_team on ~planets) No, they are on earth! ^keep()
+s: (is ~animal on ~planets) Animals will stay on earth ^keep()
+
+s: (~hanson_team) What about that person? ^keep()
+s: (~animal) Sounds tasty! ^keep()
+
+s: (~planets) Wow thats far out! ^keep()
