@@ -1,0 +1,38 @@
+# ################################################################################
+# toy-sensors.ghost
+#
+# This rulebase is to test sensor predicates and non-verbal triggers.
+#
+# Predicates needed:
+#  - ^person_appears() (no qualifiers for now)
+#  - ^person_smiles(threshold)
+#  - ^person_angry(threshold)
+#
+#  - ^word_perceived(* // specific word // concept)
+#
+#  - ^expression(smile) #trigger an explicit static expression
+#  - ^animation(smile) #trigger an explicit animation
+#
+#  - ^keep()
+#  - default input for sentence perceived
+#  - default output to TTS
+# ################################################################################
+
+# Common concepts
+concept: ~sophia (sophia robot you humanoid)
+
+# If any new user appears (perception)
+s: (^person_appears(*)) Oh Hello Human. ^keep()
+
+# If a person is happy
+s: (^person_smiles()) Haha, happy. ^expression(smile) ^keep()
+
+# If a person is angry/frowns
+s: (^person_angry()) Oh no! ^expression(angry) ^keep()
+
+# Word trigger
+s: (^word_perceived(*)) Mh! ^animation(nod) ^keep()
+s: (^word_perceived(~sophia)) Me? ^expression(surprised) ^keep()
+
+# Sentence trigger
+s: (*) I dont know how to respond, sorry. ^keep()
