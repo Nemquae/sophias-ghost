@@ -39,13 +39,15 @@ goal: (introduction=1.0) # All following rules satisfy this goal 100%
 
 
 
-# ################################################################################
+##################################################################################
 #
-# Below is a predicate conditional attempt to specify nested goals using explicit 
-# predicates to set (^increase) urge levels manually when certain rules have been triggered.
+# Below is an attempt to specify nested goals using explicit predicate conditionals 
+# to set (^increase) urge levels manually when certain rules have been triggered.
 #
+# NOTE: description "If person is engaged in introduction within the Loving AI Interview Context, 1.0 measure 
+#    of weight threshhold is likely and it is the case for Interviewer to ask if person engaged in introduction is Content."
 # s: (^person_appears(*)) ^increase_urge [ (L_AI) [ ( (introduction) (ask if person Content,) ) (1.0) ] ]
-# 
+#
 # description predicates: we_want
 # description predicates: We_dont_want_anyting_else 
 #################################################################################
@@ -55,6 +57,12 @@ goal: (introduction=1.0) # All following rules satisfy this goal 100%
 s: (^person_appears(*) ^we_want(L_AI)): ^increase_urge(introduction, 0.8)
 s: ^we_want(L_AI) AND ^we_dont_want_anything_else(...): ^increase_urge(ask-if-person-Content, 0.8) 
                                                         ^increase_urge(ask-if-person-happy, 0.8)
+
+
+
+
+
+
 
 
 
