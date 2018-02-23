@@ -48,9 +48,11 @@ goal: (introduction=1.0) # All following rules satisfy this goal 100%
 #    of weight threshhold is likely and it is the case for Interviewer to ask if person engaged in introduction is Content."
 # s: (^person_appears(*)) ^increase_urge [ (L_AI) [ ( (introduction) (ask if person Content,) ) (1.0) ] ]
 #
-# description predicates: we_want
+# NOTE: two different statements below
+#
+#
+#description predicates: we_want
 # description predicates: We_dont_want_anyting_else 
-#################################################################################
 
 ^increase_urge(goal, value)
 
@@ -58,9 +60,7 @@ s: (^person_appears(*) ^we_want(L_AI)): ^increase_urge(introduction, 0.8)
 s: ^we_want(L_AI) AND ^we_dont_want_anything_else(...): ^increase_urge(ask-if-person-Content, 0.8) 
                                                         ^increase_urge(ask-if-person-happy, 0.8)
 
-
-
-
+#################################################################################
 
 
 
