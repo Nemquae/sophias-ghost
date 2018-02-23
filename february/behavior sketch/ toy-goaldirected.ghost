@@ -38,6 +38,28 @@ goal: (introduction=1.0) # All following rules satisfy this goal 100%
   s: (^urge_below(introduction, 0.1)) ^increase_urge(tell_joke, 1.0)
 
 
+
+# ################################################################################
+#
+# Below is a predicate conditional attempt to specify nested goals using explicit 
+# predicates to set (^increase) urge levels manually when certain rules have been triggered.
+#
+# s: (^person_appears(*)) ^increase_urge [ (L_AI) [ ( (introduction) (ask if person Content,) ) (1.0) ] ]
+# 
+# description predicates: we_want
+# description predicates: We_dont_want_anyting_else 
+#################################################################################
+
+^increase_urge(goal, value)
+
+s: (^person_appears(*) ^we_want(L_AI)): ^increase_urge(introduction, 0.8)
+s: ^we_want(L_AI) AND ^we_dont_want_anything_else(...): ^increase_urge(ask-if-person-Content, 0.8) 
+                                                        ^increase_urge(ask-if-person-happy, 0.8)
+
+
+
+
+
 # Telling jokes
 goal: (tell_joke=1.0)
 
