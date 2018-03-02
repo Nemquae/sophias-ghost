@@ -22,7 +22,9 @@
 concept: ~sophia (sophia robot you humanoid)
 
 # If any new user appears (perception)
-s: (^person_appears(*)) Oh Hello Human. ^keep()
+# TODO: Add support to this syntax if required
+#s: (^person_appears(*)) Oh Hello Human. ^keep()
+s: (^person_appears(ALL)) Oh Hello Human. ^keep()
 
 # If a person is happy
 s: (^person_smiles()) Haha, happy. ^expression(smile) ^keep()
@@ -31,8 +33,11 @@ s: (^person_smiles()) Haha, happy. ^expression(smile) ^keep()
 s: (^person_angry()) Oh no! ^expression(angry) ^keep()
 
 # Word trigger
-s: (^word_perceived(*)) Mh! ^animation(nod) ^keep()
-s: (^word_perceived(~sophia)) Me? ^expression(surprised) ^keep()
+#s: (^word_perceived(*)) Mh! ^animation(nod) ^keep()
+s: (^word_perceived(ALL)) Mh! ^animation(nod) ^keep()
+# TODO: Add support to this syntax if required
+#s: (^word_perceived(~sophia)) Me? ^expression(surprised) ^keep()
+s: (^word_perceived(sophia)) Me? ^expression(surprised) ^keep()
 
 # Sentence trigger
 s: (*) I dont know how to respond, sorry. ^keep()
