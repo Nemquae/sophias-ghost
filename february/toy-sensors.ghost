@@ -24,10 +24,10 @@ concept: ~sophia (sophia robot you humanoid)
 # If any new user appears (perception)
 # TODO: Add support to this syntax if required
 #s: (^person_appears(*)) Oh Hello Human. ^keep()
-s: (^person_appears(ALL)) Oh Hello Human. ^keep()
+s: (^person_appears()) Oh Hello Human. ^keep()
 
 # If a person is happy
-s: (^person_smiles()) Haha, happy. ^expression(smile) ^keep()
+s: (^person_smiles()) Haha, happy. ^expression(happy) ^keep()
 
 # If a person is angry/frowns
 s: (^person_angry()) Oh no! ^expression(angry) ^keep()
