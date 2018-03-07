@@ -34,7 +34,7 @@ s: (^person_angry()) Oh no! ^expression(angry) ^keep()
 
 # Word trigger
 #s: (^word_perceived(*)) Mh! ^animation(nod) ^keep()
-s: (^word_perceived(ALL)) Mh! ^animation(nod) ^keep()
+s: (^word_perceived(ALL)) Mh! ^animation(positive nod) ^keep()
 # TODO: Add support to this syntax if required
 #s: (^word_perceived(~sophia)) Me? ^expression(surprised) ^keep()
 s: (^word_perceived(sophia)) Me? ^expression(surprised) ^keep()
