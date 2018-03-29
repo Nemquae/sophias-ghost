@@ -1,0 +1,39 @@
+# ################################################################################
+# toy-whatsmyname.ghost
+# March 2018
+#
+# Basic demo for:
+#   - "Sophia, my name is $name."
+#   - "Whats my name Sophia?" ... "your name is $name"
+#
+# Predicates needed:
+#  - ^person_appears(ID) (no qualifiers for now)
+#  - ^acknowledge_person()
+#
+#  - ^keep()
+#  - default input for sentence perceived
+#  - default output to TTS
+# ################################################################################
+
+
+UNFINISHED...UNFINISHED...UNFINISHED...UNFINISHED...UNFINISHED...UNFINISHED...
+
+:(
+  :(
+    :(
+      :(
+        :(
+          :(
+            :(
+
+
+# Common concepts
+concept: ~sophia (sophia robot you humanoid)
+
+# If any new user appears (perception)
+s: (^person_appears()) ^keep()
+
+
+
+# Sentence trigger
+s: (what is my name ~sophia) ^say(Your name is ^get_person_attr("name")) ^keep()

@@ -1,0 +1,21 @@
+# ################################################################################
+# toy-goaldirected.ghost
+#
+# This rulebase is to test rudimentary goal directed dialogue within Ghost.
+# It uses explicit predicates to set urge levels manually when certain rules
+# have been triggered.
+#
+# Predicates needed:
+#  - ^start_timers()
+#  - ^after_min(minutes)
+# ################################################################################
+
+# Common concepts
+concept: ~hi (hi hello "good day" greetings)
+concept: ~sophia (sophia robot you humanoid)
+
+s: (^person_appears()) start_timers() ^keep()
+
+
+s: (^after_min(0.1)) 6 seconds feel like an eternity...
+s: (^after_min(1)) It's been one magical minute with you.
