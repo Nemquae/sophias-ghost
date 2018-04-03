@@ -36,4 +36,4 @@ s: (^person_appears()) ^keep()
 
 
 # Sentence trigger
-s: (what is my name ~sophia) ^say(Your name is ^get_person_attr("name")) ^keep()
+s: (what is my name ~sophia) Your name is ^get_person_attr("name") ^keep()
