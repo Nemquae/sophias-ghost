@@ -1,5 +1,5 @@
 # ################################################################################
-# toy-goaldirected.ghost
+# toy-timers.ghost
 #
 # This rulebase is to test rudimentary goal directed dialogue within Ghost.
 # It uses explicit predicates to set urge levels manually when certain rules
