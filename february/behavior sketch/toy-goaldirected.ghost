@@ -86,5 +86,5 @@ goal: (goodbye=1.0)
 
 
 # Rule satisfying both a joke and saying goodbye
-#goal: (goodbye=1.0, tell_joke=1.0)
+#goal: (goodbye=1.0 tell_joke=1.0)
 s: (*) Why did the yogurt go to the art exhibit? Because it was cultured. Goodbye! ^decrease_urge(tell_joke, 1.0) ^decrease_urge(goodbye, 1.0)
