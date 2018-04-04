@@ -51,15 +51,14 @@ goal: (introduction=1.0) # All following rules satisfy this goal 100%
 # NOTE: two different statements below
 #
 #
-#description predicates: we_want
+# description predicates: we_want
 # description predicates: We_dont_want_anyting_else 
-
-^increase_urge(goal, value)
-
-s: (^person_appears(*) ^we_want(L_AI)): ^increase_urge(introduction, 0.8)
-s: ^we_want(L_AI) AND ^we_dont_want_anything_else(...): ^increase_urge(ask-if-person-Content, 0.8) 
-                                                        ^increase_urge(ask-if-person-happy, 0.8)
-
+#
+# ^increase_urge(goal, value)
+#
+# s: (^person_appears(*) ^we_want(L_AI)): ^increase_urge(introduction, 0.8)
+# s: ^we_want(L_AI) AND ^we_dont_want_anything_else(...): ^increase_urge(ask-if-person-Content, 0.8) 
+#                                                         ^increase_urge(ask-if-person-happy, 0.8)
 #################################################################################
 
 
