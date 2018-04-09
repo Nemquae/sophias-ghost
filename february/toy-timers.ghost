@@ -14,8 +14,7 @@
 concept: ~hi (hi hello "good day" greetings)
 concept: ~sophia (sophia robot you humanoid)
 
-s: (^person_appears()) start_timers() ^keep()
-
+s: (^person_appears()) ^start_timer() ^keep()
 
 s: (^after_min(0.1)) 6 seconds feel like an eternity...
 s: (^after_min(1)) It's been one magical minute with you.
