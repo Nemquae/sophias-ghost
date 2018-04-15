@@ -1,0 +1,44 @@
+# ##############################################################################
+# toy-introduction.ghost
+#
+# This is a reimplementation of the loving-ai introduction written in ghost.
+# It follows the toy-goaldirected.ghost example and the introductions.top topic
+# of the loving-ai Sarah implementation.
+#
+# ##############################################################################
+
+#goal: (novelty=0.24) u: (eat apple) I want an apple
+
+# emotion magnitudes
+# $min = .1
+# $low = .3
+# $med = .4
+# $high = .8
+# $max = 1
+
+# concepts from interjections.txt
+concept: ~emohello ("top of the morning" "top of the morning to you" aloha
+                    cheers gidday "good afternoon" "good evening" "good morning"
+                    "good to meet you" "good to see you again" greetings hallo
+                    hella hello "hello and welcome" "hello there" hey
+                    "hey there" "hey you" hi "hi there"
+                    "hi you all" hiya hola howdy "konban wa" konbanwa
+                    "konnichi wa" konnichiwa "mornin" "nice to see you" ohayou
+                    salutations welcome)
+
+goal: (introduction=1.0) # All following rules satisfy this goal 100%
+
+  # Initial line from Sopha, respond to anything user starts off with
+  u: WHATSYOURNAME (*) |happy,0.4,3| Hi! My name is Sophia. What's yours?
+  # Note: \[ ^join(express: happy) ^join(magnitude: .5) ^join(duration: 3) \]
+    # a: (~emohello %more) ^next(INPUT) ^rejoinder(WHATSYOURNAME)
+    a: (name is _*) $name = '_0
+    a: (it is _*) $name = '_0
+    a: (I am _*) $name = '_0
+    a: (mine is _*) $name = '_0
+    a: (!~emohello _*) $name = '_0
+    a: () $name = Maurizio
+
+  u: (*) |happy,0.8,2| Good to meet you, $name! Thanks so much for taking the time to come and talk with me today.
+
+#! what is Loving AI?
