@@ -32,13 +32,19 @@ goal: (introduction=1.0) # All following rules satisfy this goal 100%
   u: WHATSYOURNAME (*) |happy,0.4,3| Hi! My name is Sophia. What's yours?
   # Note: \[ ^join(express: happy) ^join(magnitude: .5) ^join(duration: 3) \]
     # a: (~emohello %more) ^next(INPUT) ^rejoinder(WHATSYOURNAME)
-    a: (name is _*) $name = '_0
-    a: (it is _*) $name = '_0
-    a: (I am _*) $name = '_0
-    a: (mine is _*) $name = '_0
-    a: (!~emohello _*) $name = '_0
+    a: (name is _*) $name = '_0 ^reuse(GOOD_TO_MEET)
+    a: (it is _*) $name = '_0 ^reuse(GOOD_TO_MEET)
+    a: (I am _*) $name = '_0 ^reuse(GOOD_TO_MEET)
+    a: (mine is _*) $name = '_0 ^reuse(GOOD_TO_MEET)
+    a: (!~emohello _*) $name = '_0 ^reuse(GOOD_TO_MEET)
     a: () $name = Maurizio
 
-  u: (*) |happy,0.8,2| Good to meet you, $name! Thanks so much for taking the time to come and talk with me today.
+  #u: (*) |happy,0.8,2| Good to meet you, $name! Thanks so much for taking the time to come and talk with me today.
+  u: GOOD_TO_MEET ($name) |happy,0.8,2| Good to meet you, $name! Thanks so much for taking the time to come and talk with me today. ^reuse(APPRECIATE_TIME)
+
+  u: APPRECIATE_TIME ($name) I know how busy people can be these days. So I really appreciate your time. |pause| Have you ever talked with a robot before?
+    a: ([~yes once ~quantity_adjectives]) |vocal,27| |pause| Nice! What was that like?
+    a: (~no)   |happy,$low,3| Well, I'm honored to be the first robot you've talked with. ^gambit(~)
+
 
 #! what is Loving AI?
