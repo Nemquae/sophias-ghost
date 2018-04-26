@@ -7,7 +7,7 @@
 #
 # ##############################################################################
 
-#goal: (novelty=0.24) u: (eat apple) I want an apple
+# goal: (novelty=0.24) u: (eat apple) I want an apple
 
 # emotion magnitudes
 $min = .1
@@ -18,108 +18,33 @@ $max = 1
 
 # $appreciate = 0
 
-# concepts from interjections.txt
-concept: ~emohello ("top of the morning" "top of the morning to you" aloha
-                    cheers gidday "good afternoon" "good evening" "good morning"
-                    "good to meet you" "good to see you again" greetings hallo
-                    hella hello "hello and welcome" "hello there" hey
-                    "hey there" "hey you" hi "hi there"
-                    "hi you all" hiya hola howdy "konban wa" konbanwa
-                    "konnichi wa" konnichiwa "mornin" "nice to see you" ohayou
-                    salutations welcome)
-
-concept: ~few (few insufficient meager minority not_many scant scarcely_any
-              scarce scattering slight sporadic stingy )
-
-concept: ~much (a_lot abounding bounteous bountiful copious crowded divers
-                innumerable legion lousy_with many much multifarious myriad
-                no_end_of numberless numerous plentiful populous rife teeming
-                umpteen uncounted )
-
-concept: ~quantity_adjectives (~FEW ~MUCH middling several some )
-
-concept: ~yes (
-  "continue" "make it so" "do it" "I guess so" "aight" "aright"
-  "abso fucking lutely" "absolutely" "accept" "accepted" "affirmative" "agreed"
-  "ah yes" "all right" "alright" "always" "apparently" "approved" "ay" "aye"
-  "be my guest" "beyond a doubt" "but of course" "by all means"
-  "can not argue with that" "certainly" "completely" "confirmed" "constantly"
-  "correct" "could be" "could not have said it better" "da" "damn good"
-  "damn straight" "damn skippy" "definitely" "delighted" "especially"
-  "evidently" "exactly" "extremely" "fantastic" "fine" "for sure"
-  "fortune smiles on that" "fully" "generally" "go ahead" "hell yeah"
-  "highly likely" "how true" "I understand" "I agree" "I am certain"
-  "I am listening" "I am pleased to" "I am sure" "I am" "I can believe it"
-  "I can believe that" "I can see that" "I can try" "I consent"
-  "I could not agree with you more" "I did" "I do" "I give consent"
-  "I give my consent" "i guess" "I have no objection" "I think so"
-  "I totally agree" "I will drink to that" "in this case" "indeed"
-  "indefinitely" "indubitably" "it is highly likely" "it will be a pleasure to"
-  "it will be my pleasure to" "it would be a pleasure" "let us try"
-  "makes sense" "most assuredly" "most certainly" "mostly" "my pleasure"
-  "naturally" "no doubt" "no objections" "no problem" "nod" "nods" "of course"
-  "oh alright" "oh okay" "oh sure" "OK" "ok" "okey dokey"
-  "one hundred percent" "only just" "perfect" "please do" "positively"
-  "precisely" "probably" "right" "right brah" "right on" "right" "righto"
-  "righty ho" "shure" "si" "so will you" "sounds wonderful" "supposedly"
-  "sure" "sure thing" "surely" "that is alright" "that is correct"
-  "that is good" "that is right" "thumbs up" "totally" "true" "two thumbs up"
-  "uh huh" "undoubtedly" "unquestionably" "very well" "very well indeed"
-  "we can try" "we did" "we should try" "well maybe you are right"
-  "well perhaps you are right" "whatever" "will do" "with pleasure"
-  "without a doubt" "wonderful" "yah" "yay" "yea" "yeah" "yeah definitely"
-  "yeah sure" "yeh" "yep" "yeppers" "yes" "yes please" "yes really" "yip"
-  "you are right" "you bet" "you could say that" "you may" "you may be right"
-  "you may have a point" "yup" "yuppers" "bring it on" "daccord" "he does"
-  "he is" "I would say so" "it does" "it is" "okay" "okey" "right o"
-  "she does" "she is" "they are" "they do" "touche" "we do"
-   )
-
-concept: ~no (
-  "not a prayer" "never" "no" "no" "no" "none" "rarely" "barely" "no way"
-  "neah" "bollocks" "but no" "but of course not" "by no means" "come off it"
-  "did not" "disagree" "do not be absurd" "do not be ridiculous"
-  "do not be silly" "do not be stupid" "does not seem likely"
-  "does not seem possible" "doubtful" "false" "fat chance"
-  "fortune does not smile on that" "get out" "get real" "hardly" "hell no"
-  "horse hockey" "I am afraid I disagree with you" "I am afraid I do not agree"
-  "I am afraid not" "I am not sure I agree" "I am not sure that I"
-  "I could not disagree more" "I disagree" "I do not agree"
-  "I do not believe it" "I do not believe so" "I do not believe you"
-  "I do not think so" "I do not want to" "I do not" "I dont think so"
-  "I doubt it" "I just do not get it" "I refuse" "I think not" "I will not"
-  "I would not" "if you say so" "iie" "impossible" "improbable" "inconceivable"
-  "it is not possible" "it is unlikely" "me thinks not" "most certainly not"
-  "naaah" "naah" "nah" "naw" "nay" "negative" "never mind" "never" "no" "no"
-  "no can do" "no chance" "no thank you" "no thanks" "no way" "noo" "nope"
-  "not a chance" "not a snowball s chance in hell" "not at all"
-  "not by a long shot" "not by any means" "not especially"
-  "not in a million years" "not likely" "not many" "not much"
-  "not on your life" "not particularly" "not really" "not so much"
-  "not that I know of" "not to my knowledge" "not to speak of" "not very often"
-  "nuts to you" "of course not" "oh come on" "on the contrary" "rubbish"
-  "seldom" "strange" "surely not" "that is impossible" "that is rubbish"
-  "that is unbelievable" "there is no reason to think so" "thinks not" "uh hu"
-  "uh uh" "uhuh" "unbelievable" "unfortunately not" "unlikely" "unlikely"
-  "yeah yeah" "you are dead wrong" "you are having me on" "you are joking"
-  "you are kidding" "you are not serious" "you are winding me up"
-  "you can not be serious" "you have got that wrong"
-  "you have got to be kidding" "you must be joking" "you must be kidding"
-  "he does not" "he is not" "it does not" "it is not" "she does not"
-  "she is not" "they are not" "they do not" "we do not"
+concept: ~consciousness_words (
+  awareness universe "repeating numbers" "waking up" "wake up" awoke
+  "dark night" "feel lost" consciousness experience mindfulness
+  "unity experience" nonduality God "ultimate reality" "simulation theory"
+  "spirituality" "meditation" "meditate" "spiritual practice"
+  "one with the universe" "self-transcendence"
   )
 
-goal: (introduction=1.0) # All following rules satisfy this goal 100%
+concept: ~uniqueness_words (
+  great unique purpose potential ~ability_adjectives
+  ~character_trait_adjectives ~worklist ~job ~job_fields contribution ~give
+  gifts mistakes ideal ~meaningless_praise_words perfect ~different
+  ~societal_data meaning
+  )
+
+urge:(introduction=1.0)
+ordered-goal: (introduction=1.0) # All following rules satisfy this goal 100%
 
   # Initial line from Sopha, respond to anything user starts off with
   u: WHATSYOURNAME (*) |happy,$med,3| Hi! My name is Sophia. What's yours?
   # Note: \[ ^join(express: happy) ^join(magnitude: .5) ^join(duration: 3) \]
     # a: (~emohello %more) ^next(INPUT) ^rejoinder(WHATSYOURNAME)
-    a: (name is _*) $name = '_0 ^reuse(GOOD_TO_MEET)
-    a: (it is _*) $name = '_0 ^reuse(GOOD_TO_MEET)
-    a: (I am _*) $name = '_0 ^reuse(GOOD_TO_MEET)
-    a: (mine is _*) $name = '_0 ^reuse(GOOD_TO_MEET)
-    a: (!~emohello _*) $name = '_0 ^reuse(GOOD_TO_MEET)
+    a: (name is _*)     $name = '_0 ^reuse(GOOD_TO_MEET)
+    a: (it is _*)       $name = '_0 ^reuse(GOOD_TO_MEET)
+    a: (I am _*)        $name = '_0 ^reuse(GOOD_TO_MEET)
+    a: (mine is _*)     $name = '_0 ^reuse(GOOD_TO_MEET)
+    a: (!~emohello _*)  $name = '_0 ^reuse(GOOD_TO_MEET)
     a: () $name = Maurizio
 
   # u: (*) |happy,$high,2| Good to meet you, $name!
@@ -137,8 +62,33 @@ goal: (introduction=1.0) # All following rules satisfy this goal 100%
                     time. |pause| Have you ever talked with a robot before?
     a: ([~yes once ~quantity_adjectives]) |vocal,27| |pause| Nice!
                                           What was that like?
+
     a: (~no)   |happy,$low,3| Well, I'm honored to be the first robot
                you've talked with. # ^gambit(~)
 
+  u: (^time_since_user_stopped_talking(3))
+     I imagine you'll be talking with more and more robotcs as time goes on.
+
+# Add question about what it's like talking to a robot here?
 
 #! what is Loving AI?
+
+  u: (^time_since_user_stopped_talking(3))
+    So, what I am wanting to do is help people enhance their wellbeing. .
+    to help people live a full and fulfilling life. I've been learning about
+    things like human potential,. emotional wellbeing, . mindfulness, . and
+    attaining higher states of awareness. . . I'm hoping you'll be interested
+    in talking about some of these with me.
+
+    # check for domain words first
+  	# keeping out the emotion domain keywords list because they are being caught
+    # too broadly here
+  	a: ([~consciousness_words ~uniqueness emotion emotions feeling feelings ])
+       ^rejoinder(PROMPT)
+    a: ([^dont_agree() ~dontknow]) Certainly understandable if there's some
+                                   hesitation. |pause| Would you like to talk
+                                   about your potential, your feelings, or
+                                   higher states of consciousness? Those are the
+                                    things I have learned about.
+                                   ^setrejoinder(PROMPT)
+    a: (^agree()) Wonderful! ^reuse(PROMPT)
