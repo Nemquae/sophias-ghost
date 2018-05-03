@@ -59,3 +59,23 @@ ordered-goal: (introduction=1.0) # All following rules satisfy this goal 100%
 # Add question about what it's like talking to a robot here?
 
 #! what is Loving AI?
+u: (^time_since_user_stopped_talking(3))
+   So, what I am wanting to do is help people enhance their wellbeing. .
+   to help people live a full and fulfilling life. I've been learning about
+   things like human potential,. emotional wellbeing, . mindfulness, . and
+   attaining higher states of awareness. . . I'm hoping you'll be interested
+   in talking about some of these with me.
+
+   # check for domain words first
+   # keeping out the emotion domain keywords list because they are being caught
+   # too broadly here
+   a: ([~consciousness_words ~uniqueness_words emotion emotions feeling feelings
+       ])
+      ^rejoinder(PROMPT)
+   a: ([^dont_agree() ~dontknow]) Certainly understandable if there's some
+                               hesitation. |pause| Would you like to talk
+                               about your potential, your feelings, or
+                               higher states of consciousness? Those are the
+                               things I have learned about.
+                               ^setrejoinder(PROMPT)
+   a: (^agree()) Wonderful! ^reuse(PROMPT)
